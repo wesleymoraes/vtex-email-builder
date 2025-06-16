@@ -83,6 +83,10 @@ Este comando:
 - Gera os arquivos finais em `dist/*.html`
 - Mantém intactos os placeholders VTEX dentro dos templates principais (`{{}}`)
 
+### 3. Compilar pelo GitHub
+
+Também é possível gerar os HTMLs usando o GitHub Actions. Acesse a aba **Actions** do repositório e execute o workflow *Build Email Templates*. Ao fim da execução os arquivos da pasta `dist/` ficam disponíveis como artefato para download.
+
 ---
 
 ## ✏️ Customização
