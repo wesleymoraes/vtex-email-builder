@@ -13,6 +13,23 @@
 <p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Olá {{customerName}},</p>
 <p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Você deixou itens no carrinho. Não perca, finalize sua compra!</p>
 
+<h2 style="color: #005eff; margin: 0 0 8px 0; font-weight: normal;">Itens do Carrinho</h2>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th align="left">Item</th>
+    <th align="center">Qtd</th>
+    <th align="right">Preço</th>
+  </tr>
+  {{#each items}}
+  <tr>
+    <td style="padding: 8px;">{{itemName}}</td>
+    <td align="center" style="padding: 8px;">{{itemQuantity}}</td>
+    <td align="right" style="padding: 8px;">{{itemPrice}}</td>
+  </tr>
+  {{/each}}
+</table>
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Total: {{totalValue}}</p>
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Retome sua compra: <a href="{{returnUrl}}" style="color: #005eff; text-decoration: none;">{{returnUrl}}</a></p>
 <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2" style="width: 100%; border-collapse: collapse; background-color: #f2f2f2; font-family: Arial, sans-serif; font-size: 14px; color: #555;">
   <tr>
     <td align="center" style="padding: 20px;">

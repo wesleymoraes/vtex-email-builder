@@ -4,4 +4,21 @@
 <p>Olá {{customerName}},</p>
 <p>Você deixou itens no carrinho. Não perca, finalize sua compra!</p>
 
+<h2>Itens do Carrinho</h2>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <th align="left">Item</th>
+    <th align="center">Qtd</th>
+    <th align="right">Preço</th>
+  </tr>
+  {{#each items}}
+  <tr>
+    <td>{{itemName}}</td>
+    <td align="center">{{itemQuantity}}</td>
+    <td align="right">{{itemPrice}}</td>
+  </tr>
+  {{/each}}
+</table>
+<p>Total: {{totalValue}}</p>
+<p>Retome sua compra: <a href="{{returnUrl}}">{{returnUrl}}</a></p>
 {{footer}}
