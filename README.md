@@ -85,7 +85,20 @@ Este comando:
 
 ### 3. Compilar pelo GitHub
 
-Também é possível gerar os HTMLs usando o GitHub Actions. Acesse a aba **Actions** do repositório e execute o workflow *Build Email Templates*. Ao fim da execução os arquivos da pasta `dist/` ficam disponíveis como artefato para download.
+ Também é possível gerar os HTMLs usando o GitHub Actions. Acesse a aba **Actions** do repositório e execute o workflow *Build Email Templates*. Ao fim da execução os arquivos da pasta `dist/` ficam disponíveis como artefato para download.
+
+### 4. Importar templates do repositório oficial
+
+Caso deseje copiar os templates padrões disponibilizados em
+[`vtex/vtex-emails`](https://github.com/vtex/vtex-emails), execute o script
+abaixo em um ambiente com acesso à internet:
+
+```bash
+./import-templates.sh
+```
+
+Ele clona o repositório oficial temporariamente e copia o conteúdo da pasta
+`source/templates` para `src/templates` deste projeto.
 
 ---
 
