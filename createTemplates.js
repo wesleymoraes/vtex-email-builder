@@ -1,4 +1,4 @@
-import fs from 'fs'
+import { promises as fs } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -39,35 +39,41 @@ const TEMPLATES_B2B = [
   'b2b-delivery-completed'
 ]
 
-const type = process.argv[2]
-
-let templates
-if (type === 'b2c') {
-  templates = TEMPLATES_B2C
-} else if (type === 'b2b') {
-  templates = TEMPLATES_B2B
-} else {
-  console.error('Uso: node createTemplates.js [b2c|b2b]')
-  process.exit(1)
-}
-
-const templatesDir = path.join(__dirname, 'src', 'templates')
-fs.mkdirSync(templatesDir, { recursive: true })
-
-for (const name of templates) {
-  const file = path.join(templatesDir, `${name}.hbs`)
-  if (fs.existsSync(file)) {
-    console.log(`⚠️ Já existe: ${file}`)
-    continue
+export async function generateTemplates(type) {
+  let templates
+  if (type === 'b2c') {
+    templates = TEMPLATES_B2C
+  } else if (type === 'b2b') {
+    templates = TEMPLATES_B2B
+  } else {
+    console.error('Uso: node createTemplates.js [b2c|b2b]')
+    return
   }
-  const content = `{{> header}}
+
+  const templatesDir = path.join(__dirname, 'src', 'templates')
+  await fs.mkdir(templatesDir, { recursive: true })
+
+  for (const name of templates) {
+    const file = path.join(templatesDir, `${name}.hbs`)
+    try {
+      await fs.access(file)
+      console.log(`⚠️ Já existe: ${file}`)
+      continue
+    } catch {}
+
+    const content = `{{> header}}
 
 <!-- Conteúdo do e-mail ${name} -->
 <p>Olá, {{clientName}}!</p>
 
 {{> footer}}
 `
-  fs.writeFileSync(file, content)
-  console.log(`✔️ Criado: ${file}`)
+    await fs.writeFile(file, content)
+    console.log(`✔️ Criado: ${file}`)
+  }
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  generateTemplates(process.argv[2])
 }
 

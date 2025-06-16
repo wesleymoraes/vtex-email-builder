@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js",
-    "generate": "node createTemplates.js"
+    "build": "node cli.js build",
+    "generate": "node cli.js generate",
+    "start": "node cli.js"
   },
   "keywords": [],
   "author": "",
