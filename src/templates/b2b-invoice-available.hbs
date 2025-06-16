@@ -4,4 +4,48 @@
 <p>Olá {{customerName}},</p>
 <p>A nota fiscal do pedido B2B <strong>#{{orderNumber}}</strong> está disponível.</p>
 
+<h2>Detalhes do Pedido</h2>
+<ul>
+  <li>Número: {{orderId}}</li>
+  <li>Data: {{orderDate}}</li>
+  <li>Status: {{orderStatus}}</li>
+  <li>Método de pagamento: {{paymentMethod}}</li>
+  <li>Entrega: {{shippingMethod}} - {{deliveryDate}}</li>
+</ul>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <th align="left">Item</th>
+    <th align="center">Qtd</th>
+    <th align="right">Preço</th>
+  </tr>
+  {{#each items}}
+  <tr>
+    <td>{{itemName}}</td>
+    <td align="center">{{itemQuantity}}</td>
+    <td align="right">{{itemPrice}}</td>
+  </tr>
+  {{/each}}
+  <tr>
+    <td colspan="2" align="right">Subtotal</td>
+    <td align="right">{{subtotal}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right">Frete</td>
+    <td align="right">{{shippingCost}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right">Desconto</td>
+    <td align="right">{{discount}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right"><strong>Total</strong></td>
+    <td align="right"><strong>{{totalValue}}</strong></td>
+  </tr>
+</table>
+
+<p>Endereço de entrega: {{shippingAddress}}</p>
+<p>Endereço de cobrança: {{billingAddress}}</p>
+<p>Rastreio: <a href="{{trackingUrl}}">{{trackingUrl}}</a></p>
+<p>Detalhes do pedido: <a href="{{orderUrl}}">{{orderUrl}}</a></p>
 {{footer}}

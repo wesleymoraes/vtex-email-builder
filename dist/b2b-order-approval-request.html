@@ -13,6 +13,50 @@
 <p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Olá {{approverName}},</p>
 <p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Foi criada uma solicitação de aprovação para o pedido <strong>#{{orderNumber}}</strong>.</p>
 
+<h2 style="color: #005eff; margin: 0 0 8px 0; font-weight: normal;">Detalhes do Pedido</h2>
+<ul>
+  <li>Número: {{orderId}}</li>
+  <li>Data: {{orderDate}}</li>
+  <li>Status: {{orderStatus}}</li>
+  <li>Método de pagamento: {{paymentMethod}}</li>
+  <li>Entrega: {{shippingMethod}} - {{deliveryDate}}</li>
+</ul>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th align="left">Item</th>
+    <th align="center">Qtd</th>
+    <th align="right">Preço</th>
+  </tr>
+  {{#each items}}
+  <tr>
+    <td style="padding: 8px;">{{itemName}}</td>
+    <td align="center" style="padding: 8px;">{{itemQuantity}}</td>
+    <td align="right" style="padding: 8px;">{{itemPrice}}</td>
+  </tr>
+  {{/each}}
+  <tr>
+    <td colspan="2" align="right" style="padding: 8px;">Subtotal</td>
+    <td align="right" style="padding: 8px;">{{subtotal}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" style="padding: 8px;">Frete</td>
+    <td align="right" style="padding: 8px;">{{shippingCost}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" style="padding: 8px;">Desconto</td>
+    <td align="right" style="padding: 8px;">{{discount}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" style="padding: 8px;"><strong>Total</strong></td>
+    <td align="right" style="padding: 8px;"><strong>{{totalValue}}</strong></td>
+  </tr>
+</table>
+
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Endereço de entrega: {{shippingAddress}}</p>
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Endereço de cobrança: {{billingAddress}}</p>
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Rastreio: <a href="{{trackingUrl}}" style="color: #005eff; text-decoration: none;">{{trackingUrl}}</a></p>
+<p style="margin: 0 0 16px 0; font-size: 14px; color: #333;">Detalhes do pedido: <a href="{{orderUrl}}" style="color: #005eff; text-decoration: none;">{{orderUrl}}</a></p>
 <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2" style="width: 100%; border-collapse: collapse; background-color: #f2f2f2; font-family: Arial, sans-serif; font-size: 14px; color: #555;">
   <tr>
     <td align="center" style="padding: 20px;">
