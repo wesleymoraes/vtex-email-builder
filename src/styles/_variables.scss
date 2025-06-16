@@ -1,0 +1,35 @@
+@use 'sass:color';
+
+// Tipografia
+$font-family: Arial, sans-serif;
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-large: 18px;
+$line-height-base: 1.5;
+
+// Cores principais
+$primary-color: #005eff;
+$secondary-color: #962424;
+$text-color: #333;
+$text-muted-color: #777;
+$background-color: #ffffff;
+$border-color: #dddddd;
+
+// Espaçamentos
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Tamanhos fixos
+$container-width: 600px;
+$logo-width: 120px;
+
+// Utilitários
+$radius-sm: 4px;
+$radius-md: 8px;
+
+// Links
+$link-color: $primary-color;
+$link-hover-color: color.scale($primary-color, $lightness: -10%);

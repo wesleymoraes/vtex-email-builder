@@ -1,0 +1,74 @@
+// src/styles/main.scss
+
+@use './variables' as *;
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
+  max-width: $container-width;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primary-color;
+  margin: 0 0 $spacing-sm 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: $font-size-large;
+}
+
+p {
+  margin: 0 0 $spacing-md 0;
+  font-size: $font-size-base;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: $spacing-sm;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  background-color: $background-color;
+}
+
+.header,
+.footer {
+  background-color: $secondary-color;
+  text-align: center;
+  padding: $spacing-md;
+}
+
+.footer p {
+  font-size: $font-size-small;
+  color: $text-muted-color;
+}
