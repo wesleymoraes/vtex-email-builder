@@ -21,8 +21,9 @@ vtex-email-builder/
 │   └── templates/           # Templates de e-mails (.hbs)
 │       └── order-confirmation.hbs
 ├── dist/                    # HTML final gerado com CSS inline
-├── build.js                 # Script que compila os e-mails
-├── createTemplates.js       # Cria automaticamente os templates B2C ou B2B
+├── cli.js                   # Interface de linha de comando
+├── build.js                 # Função que compila os e-mails
+├── createTemplates.js       # Função que cria os templates B2C ou B2B
 ├── package.json
 └── README.md
 ```
@@ -52,16 +53,19 @@ npm install
 
 Execute o script com o parâmetro para o tipo de template:
 
+Também é possível usar o comando genérico `npm start <comando>` para acessar a
+CLI (ex.: `npm start build`).
+
 - Para templates B2C:
 
 ```bash
-npm run generate -- b2c
+npm run generate b2c
 ```
 
 - Para templates B2B:
 
 ```bash
-npm run generate -- b2b
+npm run generate b2b
 ```
 
 O script cria os arquivos `.hbs` base em `src/templates/`, sem sobrescrever
