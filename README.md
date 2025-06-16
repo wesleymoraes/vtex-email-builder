@@ -22,7 +22,7 @@ vtex-email-builder/
 │       └── order-confirmation.hbs
 ├── dist/                    # HTML final gerado com CSS inline
 ├── build.js                 # Script que compila os e-mails
-├── create-templates.sh      # Cria automaticamente os templates B2C ou B2B
+├── createTemplates.js       # Cria automaticamente os templates B2C ou B2B
 ├── package.json
 └── README.md
 ```
@@ -55,13 +55,13 @@ Execute o script com o parâmetro para o tipo de template:
 - Para templates B2C:
 
 ```bash
-./create-templates.sh b2c
+npm run generate -- b2c
 ```
 
 - Para templates B2B:
 
 ```bash
-./create-templates.sh b2b
+npm run generate -- b2b
 ```
 
 O script cria os arquivos `.hbs` base em `src/templates/`, sem sobrescrever
@@ -72,7 +72,7 @@ arquivos existentes.
 ### 2. Compilar os e-mails
 
 ```bash
-node build.js
+npm run build
 ```
 
 Este comando:
