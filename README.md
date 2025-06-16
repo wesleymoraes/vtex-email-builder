@@ -246,3 +246,4 @@ b2b-delivery-completed.hbs
 ## 📄 Licença
 
 Uso interno. Sem licença pública definida.
+# vtex-email-builder
