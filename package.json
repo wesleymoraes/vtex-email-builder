@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node cli.js build",
     "generate": "node cli.js generate",
+    "import": "node cli.js import",
     "start": "node cli.js"
   },
   "keywords": [],
