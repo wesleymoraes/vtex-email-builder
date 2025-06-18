@@ -54,21 +54,37 @@ img {
   display: block;
 }
 
-.container {
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: $spacing-lg;
-  background-color: $background-color;
-}
-
 .header,
 .footer {
   background-color: $secondary-color;
   text-align: center;
+}
+
+.header-content,
+.footer-content {
   padding: $spacing-md;
 }
 
-.footer p {
+.logo {
+  width: $logo-width;
+}
+
+.button {
+  background-color: $primary-color;
+  color: #ffffff;
+  text-decoration: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-sm;
+  display: inline-block;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 $spacing-xs;
+}
+
+.footer-copy {
   font-size: $font-size-small;
   color: $text-muted-color;
+  padding: $spacing-md;
 }
