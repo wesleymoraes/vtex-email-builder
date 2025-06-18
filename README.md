@@ -94,10 +94,14 @@ Este comando:
 ### 4. Importar templates do repositório oficial
 
 Caso deseje copiar os templates padrões disponibilizados em
-[`vtex/vtex-emails`](https://github.com/vtex/vtex-emails), execute o script
-abaixo em um ambiente com acesso à internet:
+[`vtex/vtex-emails`](https://github.com/vtex/vtex-emails), utilize o novo
+comando da CLI ou o script abaixo em um ambiente com acesso à internet:
 
 ```bash
+# via CLI Node
+npm run import
+
+# ou execute o script bash
 ./import-templates.sh
 ```
 
